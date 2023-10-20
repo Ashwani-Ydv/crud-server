@@ -6,9 +6,15 @@ import { AppModule } from './app.module';
 //   await app.listen(3000);
 // }
 // bootstrap();
+// async function bootstrap() {
+//   const app = await NestFactory.create(AppModule);
+//   app.enableCors();
+//   await app.listen(3000);
+// }
+// bootstrap();
+
 async function bootstrap() {
-  const app = await NestFactory.create(AppModule);
-  app.enableCors();
+  const app = await NestFactory.create(AppModule, { cors: true });
   await app.listen(3000);
 }
 bootstrap();
